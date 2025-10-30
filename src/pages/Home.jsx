@@ -65,7 +65,7 @@ export default function Home() {
         {/* Hero Floating Image */}
         <div data-aos="fade-left" className="relative">
           <img
-            src="/src/assets/temple-hero.jpg"
+            src="src/assets/temples/temple1.jpg"
             alt="Temple"
             className="w-full h-96 object-cover rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-500"
           />
