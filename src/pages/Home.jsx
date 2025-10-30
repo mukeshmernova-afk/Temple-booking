@@ -15,6 +15,8 @@ import subramaniya from "../assets/temples/subramaniya.jpg";
 import kallalagar from "../assets/temples/kallalagar.jpg";
 import ramanathaswamy from "../assets/temples/ramanathaswamy.jpg";
 
+import temple1 from "../assets/temples/temple1.jpg"; // ✅ Correct import
+
 // 🛕 Temple Data
 const temples = [
   { id: 1, name: "Sri Meenakshi Amman Temple", deity: "Goddess Meenakshi", location: "Madurai", image: meenakshi },
@@ -63,17 +65,18 @@ export default function Home() {
         </div>
 
         {/* Hero Floating Image */}
-        <div data-aos="fade-left" className="relative">
-          <img
-            src="src/assets/temples/temple1.jpg"
-            alt="Temple"
-            className="w-full h-96 object-cover rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-500"
-          />
-          <div className="absolute -bottom-8 -right-6 bg-amber-500 text-white px-6 py-3 rounded-full shadow-lg animate-bounce">
-            🛕 Tamil Nadu Temples Portal
-          </div>
+       {/* Hero Floating Image */}
+      <div data-aos="fade-left" className="relative">
+        <img
+          src={temple1} // ✅ Use imported variable
+          alt="Temple"
+          className="w-full h-96 object-cover rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-500"
+        />
+        <div className="absolute -bottom-8 -right-6 bg-amber-500 text-white px-6 py-3 rounded-full shadow-lg animate-bounce">
+          🛕 Tamil Nadu Temples Portal
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 🛕 Temples List Section */}
       <section className="px-6 md:px-20">
