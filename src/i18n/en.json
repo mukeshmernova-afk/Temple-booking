@@ -1,0 +1,43 @@
+{
+  "navbar": {
+    "home": "Home",
+    "donate": "Donations",
+    "about": "About",
+    "contact": "Contact",
+    "language": "தமிழ்"
+  },
+  "donate": {
+    "heading": "Temple Donations",
+    "intro": "Your kind donations help us continue our spiritual, cultural, and social initiatives. Every rupee you donate goes toward preserving traditions and supporting temple activities.",
+    "thank_you": "🙏 Thank you for your generous donation!",
+    "button": "Donate Now",
+    "general_title": "General Donation",
+    "general_desc": "Your contribution helps with daily poojas, maintenance, and welfare programs for the devotees.",
+    "renovation_title": "Temple Renovation",
+    "renovation_desc": "Help preserve our heritage through temple renovation, art restoration, and improvements.",
+    "special_title": "Special Fund",
+    "special_desc": "Support festivals, Annadhanam (free meals), and educational initiatives for devotees."
+  },
+   "home": {
+    "title": "Devasthanam Temple Booking System",
+    "description": "A unified platform to book darshan, poojas, and make donations across Tamil Nadu temples. Experience devotion with technology and trust.",
+    "book_button": "Book Darshan",
+    "donate_button": "Donate",
+    "temple_heading": "Temples Available for Booking",
+    "portal_tag": "🛕 Tamil Nadu Temples Portal"
+  },
+  "booking": {
+    "title": "🛕 Temple Darshan & Pooja Booking",
+    "subtitle": "Book your sacred darshan and pooja slots online. Experience devotion with simplicity and transparency.",
+    "form_title": "📅 Fill Your Booking Details",
+    "name": "Full Name",
+    "date": "Select Date",
+    "slot": "Time Slot",
+    "pooja": "Select Pooja",
+    "pilgrims": "Number of Pilgrims",
+    "request": "Request Booking",
+    "reset": "Reset",
+    "pooja_title": "🙏 Available Poojas & Meanings"
+  }
+  
+}

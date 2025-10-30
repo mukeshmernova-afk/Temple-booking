@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 
 // 🛕 Import local temple images
 import meenakshi from "../assets/temples/meenakshi.jpg";
@@ -14,10 +15,8 @@ import mariamman from "../assets/temples/mariamman.jpg";
 import subramaniya from "../assets/temples/subramaniya.jpg";
 import kallalagar from "../assets/temples/kallalagar.jpg";
 import ramanathaswamy from "../assets/temples/ramanathaswamy.jpg";
+import temple1 from "../assets/temples/temple1.jpg";
 
-import temple1 from "../assets/temples/temple1.jpg"; // ✅ Correct import
-
-// 🛕 Temple Data
 const temples = [
   { id: 1, name: "Sri Meenakshi Amman Temple", deity: "Goddess Meenakshi", location: "Madurai", image: meenakshi },
   { id: 2, name: "Arulmigu Brihadeeswarar Temple", deity: "Lord Shiva", location: "Thanjavur", image: brihadeeswarar },
@@ -32,6 +31,8 @@ const temples = [
 ];
 
 export default function Home() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
@@ -42,49 +43,44 @@ export default function Home() {
       <section className="grid md:grid-cols-2 gap-10 items-center px-6 md:px-20 pt-10">
         <div data-aos="fade-right">
           <h1 className="text-4xl md:text-5xl font-extrabold text-amber-700 leading-tight">
-            Devasthanam Temple Booking System
+            {t("home.title")}
           </h1>
           <p className="mt-4 text-slate-700 text-lg leading-relaxed">
-            A unified platform to book <span className="text-amber-600 font-semibold">darshan, poojas,</span> and make
-            donations across Tamil Nadu temples. Experience devotion with technology and trust.
+            {t("home.description")}
           </p>
           <div className="mt-6 flex gap-4">
             <Link
               to="/booking"
               className="px-6 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition shadow-md"
             >
-              Book Darshan
+              {t("home.book_button")}
             </Link>
             <Link
               to="/donate"
               className="px-6 py-3 border-2 border-amber-500 text-amber-700 font-semibold rounded-lg hover:bg-amber-50 transition"
             >
-              Donate
+              {t("home.donate_button")}
             </Link>
           </div>
         </div>
 
-        {/* Hero Floating Image */}
-       {/* Hero Floating Image */}
-      <div data-aos="fade-left" className="relative">
-        <img
-          src={temple1} // ✅ Use imported variable
-          alt="Temple"
-          className="w-full h-96 object-cover rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-500"
-        />
-        <div className="absolute -bottom-8 -right-6 bg-amber-500 text-white px-6 py-3 rounded-full shadow-lg animate-bounce">
-          🛕 Tamil Nadu Temples Portal
+        {/* 🛕 Hero Floating Image */}
+        <div data-aos="fade-left" className="relative">
+          <img
+            src={temple1}
+            alt="Temple"
+            className="w-full h-96 object-cover rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-500"
+          />
+          <div className="absolute -bottom-8 -right-6 bg-amber-500 text-white px-6 py-3 rounded-full shadow-lg animate-bounce">
+            {t("home.portal_tag")}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* 🛕 Temples List Section */}
       <section className="px-6 md:px-20">
-        <h2
-          data-aos="fade-up"
-          className="text-3xl font-bold mb-10 text-amber-700 text-center"
-        >
-          Temples Available for Booking
+        <h2 data-aos="fade-up" className="text-3xl font-bold mb-10 text-amber-700 text-center">
+          {t("home.temple_heading")}
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -116,16 +112,14 @@ export default function Home() {
                   Available Pooja Slots:
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {["06:00 AM - 08:00 AM", "10:00 AM - 12:00 PM", "04:00 PM - 06:00 PM"].map(
-                    (slot, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-medium"
-                      >
-                        {slot}
-                      </span>
-                    )
-                  )}
+                  {["06:00 AM - 08:00 AM", "10:00 AM - 12:00 PM", "04:00 PM - 06:00 PM"].map((slot, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-medium"
+                    >
+                      {slot}
+                    </span>
+                  ))}
                 </div>
 
                 <Link
@@ -135,8 +129,6 @@ export default function Home() {
                   View Details
                 </Link>
               </div>
-
-              {/* Floating Glow */}
               <div className="absolute -top-4 -right-4 w-6 h-6 bg-amber-400 rounded-full blur-lg opacity-80 animate-pulse"></div>
             </div>
           ))}

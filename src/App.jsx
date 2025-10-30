@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./i18n";
+import "./i18n/index.js";
+
 
 // Components & Pages
 import Navbar from "./components/Navbar";

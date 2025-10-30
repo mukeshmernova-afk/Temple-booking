@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { CalendarDays, Users, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Booking() {
+  const { t } = useTranslation();
+
   const [form, setForm] = useState({
     name: "",
     date: "",
@@ -10,13 +13,12 @@ export default function Booking() {
     pilgrims: 1,
   });
 
-  const handleChange = (e) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(
-      `🙏 Booking Requested 🙏\n\nName: ${form.name}\nDate: ${form.date}\nTime: ${form.slot}\nPooja: ${form.pooja}\nPilgrims: ${form.pilgrims}`
+      `🙏 ${t("booking.title")}\n\n${t("booking.name")}: ${form.name}\n${t("booking.date")}: ${form.date}\n${t("booking.slot")}: ${form.slot}\n${t("booking.pooja")}: ${form.pooja}\n${t("booking.pilgrims")}: ${form.pilgrims}`
     );
   };
 
@@ -57,12 +59,9 @@ export default function Booking() {
         {/* Title */}
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold text-amber-700 mb-2">
-            🛕 Temple Darshan & Pooja Booking
+            {t("booking.title")}
           </h1>
-          <p className="text-slate-600">
-            Book your sacred darshan and pooja slots online. Experience devotion
-            with simplicity and transparency.
-          </p>
+          <p className="text-slate-600">{t("booking.subtitle")}</p>
         </div>
 
         {/* Main Layout */}
@@ -73,13 +72,13 @@ export default function Booking() {
             className="bg-white p-6 rounded-2xl shadow-lg border border-amber-100"
           >
             <h2 className="text-xl font-semibold text-amber-700 mb-4">
-              📅 Fill Your Booking Details
+              {t("booking.form_title")}
             </h2>
 
             {/* Name */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-slate-700 mb-1">
-                Full Name (முழுப் பெயர்)
+                {t("booking.name")}
               </label>
               <input
                 type="text"
@@ -96,13 +95,10 @@ export default function Booking() {
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">
-                  Select Date (தேதி)
+                  {t("booking.date")}
                 </label>
                 <div className="relative">
-                  <CalendarDays
-                    size={18}
-                    className="absolute right-3 top-3 text-slate-400"
-                  />
+                  <CalendarDays size={18} className="absolute right-3 top-3 text-slate-400" />
                   <input
                     type="date"
                     name="date"
@@ -116,13 +112,10 @@ export default function Booking() {
 
               <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">
-                  Time Slot (நேரம்)
+                  {t("booking.slot")}
                 </label>
                 <div className="relative">
-                  <Clock
-                    size={18}
-                    className="absolute right-3 top-3 text-slate-400"
-                  />
+                  <Clock size={18} className="absolute right-3 top-3 text-slate-400" />
                   <select
                     name="slot"
                     value={form.slot}
@@ -143,7 +136,7 @@ export default function Booking() {
             {/* Pooja Type */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-slate-700 mb-1">
-                Select Pooja (பூஜை தேர்வு)
+                {t("booking.pooja")}
               </label>
               <select
                 name="pooja"
@@ -160,13 +153,10 @@ export default function Booking() {
             {/* Pilgrims Count */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-slate-700 mb-1">
-                Number of Pilgrims (பக்தர்கள் எண்ணிக்கை)
+                {t("booking.pilgrims")}
               </label>
               <div className="relative">
-                <Users
-                  size={18}
-                  className="absolute right-3 top-3 text-slate-400"
-                />
+                <Users size={18} className="absolute right-3 top-3 text-slate-400" />
                 <input
                   type="number"
                   min="1"
@@ -184,14 +174,14 @@ export default function Booking() {
                 type="submit"
                 className="px-5 py-2 bg-gradient-to-r from-amber-500 to-yellow-400 text-white font-semibold rounded-lg shadow hover:scale-105 transition-transform"
               >
-                Request Booking
+                {t("booking.request")}
               </button>
               <button
                 type="button"
                 onClick={handleReset}
                 className="px-5 py-2 border border-amber-400 text-amber-700 rounded-lg hover:bg-amber-50 transition"
               >
-                Reset
+                {t("booking.reset")}
               </button>
             </div>
           </form>
@@ -199,7 +189,7 @@ export default function Booking() {
           {/* Pooja Descriptions */}
           <div className="bg-white p-6 rounded-2xl shadow-lg border border-amber-100">
             <h2 className="text-xl font-semibold text-amber-700 mb-4">
-              🙏 Available Poojas & Meanings
+              {t("booking.pooja_title")}
             </h2>
             <div className="space-y-5 max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-amber-300">
               {poojas.map((p, index) => (
@@ -209,9 +199,7 @@ export default function Booking() {
                 >
                   <h3 className="font-semibold text-amber-700">{p.name}</h3>
                   <p className="text-sm text-slate-600 mt-1">{p.desc}</p>
-                  <p className="text-sm text-amber-800 italic mt-1">
-                    {p.tamil}
-                  </p>
+                  <p className="text-sm text-amber-800 italic mt-1">{p.tamil}</p>
                 </div>
               ))}
             </div>
