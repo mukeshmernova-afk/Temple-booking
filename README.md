@@ -1,16 +1,82 @@
-# React + Vite
+🛕 Temple Booking System (Devasthanam)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application designed to streamline temple operations — including online darshan booking, donation management, and admin approval system.
+Built using ReactJS, Tailwind CSS, and AOS animations for a smooth, responsive experience.
 
-Currently, two official plugins are available:
+{🚀 Features}
+👥 User Module
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+View detailed information about temples and deities
 
-## React Compiler
+Book Darshan slots online
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Make donations securely
 
-## Expanding the ESLint configuration
+Receive booking confirmation messages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+{🧘 Temple Module}
+
+Displays available booking slots
+
+Shows temple details and images
+
+Supports multiple types of donations
+
+{🧑‍💼 Admin Module}
+
+View and manage all bookings
+
+Approve or reject user slot requests
+
+Add/update/delete temple data
+
+Manage donation funds and temple activities
+
+{🛠 Tech Stack}
+Category	Technologies
+Frontend	React.js, Tailwind CSS, AOS
+Routing	React Router DOM
+Icons	React Icons
+Backend (future)	Node.js, Express.js
+Database (future)	MongoDB
+Version Control	Git & GitHub
+
+💸 Donations Page Preview
+
+General Donation
+
+Temple Renovation Fund
+
+Special Event Fund
+Each with “Donate Now” button and success message alert.
+
+🔒 Admin Panel Features
+
+View all user booking requests
+
+Approve or reject darshan slots
+
+View donation records
+
+Manage temple events
+
+✨ Future Enhancements
+
+Backend API integration (Node.js + MongoDB)
+
+Payment gateway (Razorpay / Stripe)
+
+Role-based authentication
+
+Multi-language support
+
+Email/SMS booking confirmation
+
+🧑‍💻 Developer
+
+👤 Mukeshkanna M.
+Mern Stack Developer
+📧 mukeshmernova@gmail.com
+
+
+“Bringing ideas to life with intuitive designs and solid web apps!”
