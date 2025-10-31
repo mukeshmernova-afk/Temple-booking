@@ -18,7 +18,7 @@
     "special_title": "Special Fund",
     "special_desc": "Support festivals, Annadhanam (free meals), and educational initiatives for devotees."
   },
-   "home": {
+  "home": {
     "title": "Devasthanam Temple Booking System",
     "description": "A unified platform to book darshan, poojas, and make donations across Tamil Nadu temples. Experience devotion with technology and trust.",
     "book_button": "Book Darshan",
@@ -38,6 +38,127 @@
     "request": "Request Booking",
     "reset": "Reset",
     "pooja_title": "🙏 Available Poojas & Meanings"
+  },
+  "admin": {
+    "heading": "🛕 Devasthanam Admin Dashboard",
+    "subtext": "Manage temple bookings, approve pooja requests, assign priests, and oversee temple activities from a single dashboard.",
+    "total": "Total Bookings",
+    "pending": "Pending Requests",
+    "approved": "Approved Slots",
+    "rejected": "Rejected Requests",
+    "table_heading": "Booking Requests Management",
+    "table_note": "Below are recent pooja booking requests from devotees. You can approve or reject based on slot availability or temple schedule.",
+    "columns": {
+      "id": "ID",
+      "name": "Devotee Name",
+      "temple": "Temple",
+      "date": "Date",
+      "time": "Time",
+      "pooja": "Pooja",
+      "status": "Status",
+      "action": "Action"
+    },
+    "actions": {
+      "approve": "Approve",
+      "reject": "Reject"
+    },
+    "notifications": {
+      "approved": "✅ Booking has been approved.",
+      "rejected": "❌ Booking has been rejected."
+    },
+    "footer": "© 2025 Tamil Nadu Hindu Religious & Charitable Endowments Department | Managed by Devasthanam Admin"
+  },
+  "footer": {
+    "rights": "All Rights Reserved © 2025 Devasthanam Portal",
+    "powered_by": "Powered by Tamil Nadu HR & CE Department"
+  },
+   "temples": [
+    {
+      "id": 1,
+      "name": "Sri Meenakshi Amman Temple",
+      "deity": "Goddess Meenakshi",
+      "location": "Madurai"
+    },
+    {
+      "id": 2,
+      "name": "Arulmigu Brihadeeswarar Temple",
+      "deity": "Lord Shiva",
+      "location": "Thanjavur"
+    },
+    {
+      "id": 3,
+      "name": "Arulmigu Kapaleeswarar Temple",
+      "deity": "Lord Shiva",
+      "location": "Chennai"
+    },
+    {
+      "id": 4,
+      "name": "Sri Ranganathaswamy Temple",
+      "deity": "Lord Vishnu",
+      "location": "Srirangam"
+    },
+    {
+      "id": 5,
+      "name": "Arulmigu Dhandayuthapani Temple",
+      "deity": "Lord Murugan",
+      "location": "Palani"
+    },
+    {
+      "id": 6,
+      "name": "Arulmigu Annamalaiyar Temple",
+      "deity": "Lord Shiva",
+      "location": "Tiruvannamalai"
+    },
+    {
+      "id": 7,
+      "name": "Arulmigu Mariamman Temple",
+      "deity": "Goddess Mariamman",
+      "location": "Samayapuram"
+    },
+    {
+      "id": 8,
+      "name": "Arulmigu Subramaniya Swamy Temple",
+      "deity": "Lord Murugan",
+      "location": "Tiruttani"
+    },
+    {
+      "id": 9,
+      "name": "Arulmigu Kallalagar Temple",
+      "deity": "Lord Vishnu",
+      "location": "Alagar Kovil"
+    },
+    {
+      "id": 10,
+      "name": "Arulmigu Ramanathaswamy Temple",
+      "deity": "Lord Shiva",
+      "location": "Rameswaram"
+    }
+  ],
+  "login": {
+  "title": "Devasthanam Login",
+  "email_label": "Email Address",
+  "email_placeholder": "Enter your email",
+  "password_label": "Password",
+  "password_placeholder": "Enter your password",
+  "button": "Login",
+  "no_account": "Don’t have an account?",
+  "register_here": "Register Here",
+  "invalid": "Please enter valid credentials.",
+  "welcome": "Welcome"
+},
+"register": {
+    "title": "Create Your Account",
+    "subtitle": "Join our divine digital community of devotees.",
+    "name_label": "Full Name",
+    "name_placeholder": "Enter your name",
+    "email_label": "Email Address",
+    "email_placeholder": "Enter your email",
+    "password_label": "Password",
+    "password_placeholder": "Enter your password",
+    "button": "Register",
+    "have_account": "Already have an account?",
+    "login_here": "Login Here",
+    "success": "Welcome",
+    "invalid": "Please fill all required fields properly."
   }
-  
 }

@@ -17,25 +17,32 @@ import kallalagar from "../assets/temples/kallalagar.jpg";
 import ramanathaswamy from "../assets/temples/ramanathaswamy.jpg";
 import temple1 from "../assets/temples/temple1.jpg";
 
-const temples = [
-  { id: 1, name: "Sri Meenakshi Amman Temple", deity: "Goddess Meenakshi", location: "Madurai", image: meenakshi },
-  { id: 2, name: "Arulmigu Brihadeeswarar Temple", deity: "Lord Shiva", location: "Thanjavur", image: brihadeeswarar },
-  { id: 3, name: "Arulmigu Kapaleeswarar Temple", deity: "Lord Shiva", location: "Chennai", image: kapaleeswarar },
-  { id: 4, name: "Sri Ranganathaswamy Temple", deity: "Lord Vishnu", location: "Srirangam", image: ranganathaswamy },
-  { id: 5, name: "Arulmigu Dhandayuthapani Temple", deity: "Lord Murugan", location: "Palani", image: palani },
-  { id: 6, name: "Arulmigu Annamalaiyar Temple", deity: "Lord Shiva", location: "Tiruvannamalai", image: annamalaiyar },
-  { id: 7, name: "Arulmigu Mariamman Temple", deity: "Goddess Mariamman", location: "Samayapuram", image: mariamman },
-  { id: 8, name: "Arulmigu Subramaniya Swamy Temple", deity: "Lord Murugan", location: "Tiruttani", image: subramaniya },
-  { id: 9, name: "Arulmigu Kallalagar Temple", deity: "Lord Vishnu", location: "Alagar Kovil", image: kallalagar },
-  { id: 10, name: "Arulmigu Ramanathaswamy Temple", deity: "Lord Shiva", location: "Rameswaram", image: ramanathaswamy },
-];
-
 export default function Home() {
   const { t } = useTranslation();
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  // 🌐 Load temple data dynamically from translation files
+  const temples = t("temples", { returnObjects: true });
+
+  // 🖼️ Match temple images with IDs
+  const templeImages = [
+    meenakshi,
+    brihadeeswarar,
+    kapaleeswarar,
+    ranganathaswamy,
+    palani,
+    annamalaiyar,
+    mariamman,
+    subramaniya,
+    kallalagar,
+    ramanathaswamy,
+  ];
+  temples.forEach((temple, index) => {
+    temple.image = templeImages[index];
+  });
 
   return (
     <div className="space-y-20 bg-gradient-to-b from-amber-50 via-white to-yellow-50 min-h-screen pb-20">
@@ -126,10 +133,9 @@ export default function Home() {
                   to={`/temple/${temple.id}`}
                   className="block w-full text-center bg-amber-500 text-white py-2 rounded-lg font-semibold hover:bg-amber-600 transition"
                 >
-                  View Details
+                  {t("home.book_button")}
                 </Link>
               </div>
-              <div className="absolute -top-4 -right-4 w-6 h-6 bg-amber-400 rounded-full blur-lg opacity-80 animate-pulse"></div>
             </div>
           ))}
         </div>

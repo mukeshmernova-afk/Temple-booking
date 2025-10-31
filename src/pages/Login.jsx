@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Login() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [form, setForm] = useState({ email: "", password: "" });
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -11,10 +19,10 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (form.email && form.password) {
-      alert(`Welcome, ${form.email}!`);
-      navigate("/"); // Redirect to home after login
+      alert(`${t("login.welcome")}, ${form.email}!`);
+      navigate("/");
     } else {
-      alert("Please enter valid credentials.");
+      alert(t("login.invalid"));
     }
   };
 
@@ -25,34 +33,34 @@ export default function Login() {
         className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-amber-200"
       >
         <h2 className="text-2xl font-bold text-center text-amber-700 mb-6">
-          Devasthanam Login
+          {t("login.title")}
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-sm font-medium text-gray-600">
-              Email Address
+              {t("login.email_label")}
             </label>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="Enter your email"
+              placeholder={t("login.email_placeholder")}
               className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-amber-400 focus:border-amber-400"
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-600">
-              Password
+              {t("login.password_label")}
             </label>
             <input
               type="password"
               name="password"
               value={form.password}
               onChange={handleChange}
-              placeholder="Enter your password"
+              placeholder={t("login.password_placeholder")}
               className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-amber-400 focus:border-amber-400"
             />
           </div>
@@ -61,14 +69,17 @@ export default function Login() {
             type="submit"
             className="w-full py-2 bg-gradient-to-r from-amber-500 to-yellow-400 text-white font-semibold rounded-md hover:shadow-lg hover:scale-[1.02] transition-all"
           >
-            Login
+            {t("login.button")}
           </button>
         </form>
 
         <p className="text-sm text-center mt-5 text-gray-600">
-          Don’t have an account?{" "}
-          <span className="text-amber-600 font-semibold cursor-pointer hover:underline">
-            Register Here
+          {t("login.no_account")}{" "}
+          <span
+            className="text-amber-600 font-semibold cursor-pointer hover:underline"
+            onClick={() => navigate("/register")}
+          >
+            {t("login.register_here")}
           </span>
         </p>
       </div>

@@ -15,6 +15,7 @@ import Booking from "./pages/Booking";
 import Donate from "./pages/Donate";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import TempleDetails from "./pages/TempleDetails";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/donate" element={<Donate />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/temple/:id" element={<TempleDetails />} />
         </Routes>
       </main>
